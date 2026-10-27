@@ -1,0 +1,12 @@
+:root {
+    --color-bg: #121212;
+    --color-superficie: #1c1a1b;
+    --color-telon: #800020;
+    --color-oro: #D4AF37;
+    --color-texto: #f1ece4;
+    --color-suave: #b9b0a3;
+    --font-titulo: 'Cormorant Garamond', serif;
+    --font-main: 'Inter', Arial, sans-serif;
+    --radio: 6px;
+    --ancho: 1100px;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teatro UCB | Temporada 2026</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <a class="saltar" href="#principal">Saltar al contenido</a>
+
+        <header class="cabecera">
+            <a class="marca" href="#inicio">Teatro UCB</a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
+            <nav id="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="#cartelera">Cartelera</a></li>
+                    <li><a href="#reserva">Reservar</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#talleres">Talleres</a></li>
+                    <li><a href="#ubicacion">Ubicación</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="principal">
+            <section id="inicio" class="hero">
+                <div class="telon" aria-hidden="true"></div>
+                <div class="hero-texto">
+                    <p class="hero-fecha">Temporada 2026</p>
+                    <h1>Sube el telón en la UCB</h1>
+                    <p>Cuatro obras, una sala y tu butaca esperando. Elige función y reserva en un minuto.</p>
+                    <div class="acciones">
+                        <a class="btn" href="#reserva">Reservar entradas</a>
+                        <a class="btn btn-borde" href="#cartelera">Ver cartelera</a>
+                    </div>
+                    <p class="cuenta" id="cuenta" aria-live="polite"></p>
+                </div>
+            </section>
+
+            <section id="cartelera" class="seccion">
+                <h2>Cartelera</h2>
+                <div class="rejilla" id="listaObras"></div>
+            </section>
+
+            <section id="reserva" class="seccion seccion-alt">
+                <h2>Reserva tu butaca</h2>
+                <div class="reserva">
+                    <div class="reserva-panel">
+                        <label for="funcion">Función</label>
+                        <select id="funcion"></select>
+                        <ul class="leyenda">
+                            <li><span class="asiento-demo libre"></span>Disponible</li>
+                            <li><span class="asiento-demo ocupado"></span>Ocupada</li>
+                            <li><span class="asiento-demo elegido"></span>Seleccionada</li>
+                        </ul>
+                        <div class="resumen" aria-live="polite">
+                            <p>Butacas: <strong id="lista">ninguna</strong></p>
+                            <p>Total: <strong id="total">Bs 0</strong></p>
+                        </div>
+                        <button class="btn" id="confirmar" disabled>Confirmar reserva</button>
+                        <p class="mensaje" id="mensaje" role="status"></p>
+                    </div>
+                    <div class="sala">
+                        <div class="escenario">Escenario</div>
+                        <div class="mapa" id="mapa" role="group" aria-label="Mapa de butacas"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="galeria" class="seccion">
+                <h2>Obras pasadas</h2>
+                <div class="rejilla" id="listaGaleria"></div>
+                <div class="grafico">
+                    <canvas id="grafico" aria-label="Asistencia por obra"></canvas>
+                </div>
+            </section>
+
+            <section id="talleres" class="seccion seccion-alt">
+                <h2>Talleres y convocatorias</h2>
+                <div class="rejilla" id="listaTalleres"></div>
+            </section>
+
+            <section id="ubicacion" class="seccion">
+                <h2>Cómo llegar</h2>
+                <div id="mapaCampus" class="mapa-campus"></div>
+            </section>
+        </main>
+
+        <footer class="pie">
+            <p>© 2026 Compañía de Teatro de la Universidad Católica Boliviana "San Pablo", La Paz.</p>
+        </footer>
+
+        <dialog id="dlgVideo" class="modal">
+            <form method="dialog">
+                <button class="cerrar" aria-label="Cerrar">✕</button>
+            </form>
+            <h3 id="tituloVideo"></h3>
+            <video id="video" controls preload="none"></video>
+        </dialog>
+
+        <dialog id="dlgTaller" class="modal">
+            <form method="dialog">
+                <button class="cerrar" aria-label="Cerrar">✕</button>
+            </form>
+            <h3 id="tituloTaller"></h3>
+            <form id="formTaller" novalidate>
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" name="nombre" required minlength="3" autocomplete="name">
+
+                <label for="correo">Correo institucional</label>
+                <input id="correo" name="correo" type="email" required pattern="[a-zA-Z0-9._%+\-]+@ucb\.edu\.bo" placeholder="nombre@ucb.edu.bo">
+
+                <label for="exp">Experiencia previa</label>
+                <select id="exp" name="exp" required>
+                    <option value="">Selecciona</option>
+                    <option>Ninguna</option>
+                    <option>Básica</option>
+                    <option>Intermedia</option>
+                    <option>Avanzada</option>
+                </select>
+
+                <p class="error" id="errorTaller" role="alert"></p>
+                <button class="btn" type="submit">Inscribirme</button>
+            </form>
+        </dialog>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/locale/es.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/butacas.js"></script>
+        <script src="js/talleres.js"></script>
+    </body>
+</html>

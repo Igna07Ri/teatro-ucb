@@ -1,0 +1,86 @@
+{
+    "obras": [
+        {
+            "id": 1,
+            "titulo": "La casa de Bernarda Alba",
+            "autor": "Federico García Lorca",
+            "fecha": "2026-11-14T19:30",
+            "sinopsis": "Cinco hermanas encerradas por ocho años de luto bajo el mando de su madre.",
+            "video": "assets/video/aviso1.mp4",
+            "img": "https://picsum.photos/seed/teatro1/600/400"
+        },
+        {
+            "id": 2,
+            "titulo": "Esperando a Godot",
+            "autor": "Samuel Beckett",
+            "fecha": "2026-11-21T19:30",
+            "sinopsis": "Dos hombres esperan a alguien que nunca llega y llenan el tiempo como pueden.",
+            "video": "assets/video/aviso2.mp4",
+            "img": "https://picsum.photos/seed/teatro2/600/400"
+        },
+        {
+            "id": 3,
+            "titulo": "Un tranvía llamado deseo",
+            "autor": "Tennessee Williams",
+            "fecha": "2026-12-05T20:00",
+            "sinopsis": "Blanche llega a casa de su hermana y su pasado empieza a alcanzarla.",
+            "video": "assets/video/aviso3.mp4",
+            "img": "https://picsum.photos/seed/teatro3/600/400"
+        },
+        {
+            "id": 4,
+            "titulo": "El avaro",
+            "autor": "Molière",
+            "fecha": "2026-12-12T19:00",
+            "sinopsis": "Harpagón cuida su dinero más que a su familia, y el enredo no tarda en estallar.",
+            "video": "assets/video/aviso4.mp4",
+            "img": "https://picsum.photos/seed/teatro4/600/400"
+        }
+    ],
+    "pasadas": [
+        {
+            "titulo": "Romeo y Julieta",
+            "anio": 2025,
+            "asistencia": 420,
+            "resena": "Una versión ágil, con un elenco joven que se lo creyó de principio a fin.",
+            "img": "https://picsum.photos/seed/pasada1/600/400",
+            "imgSm": "https://picsum.photos/seed/pasada1/320/220"
+        },
+        {
+            "titulo": "Fuenteovejuna",
+            "anio": 2025,
+            "asistencia": 380,
+            "resena": "El coro final puso de pie a la sala.",
+            "img": "https://picsum.photos/seed/pasada2/600/400",
+            "imgSm": "https://picsum.photos/seed/pasada2/320/220"
+        },
+        {
+            "titulo": "Sueño de una noche de verano",
+            "anio": 2024,
+            "asistencia": 510,
+            "resena": "Humor, luces y mucho ritmo. La función de cierre agotó entradas.",
+            "img": "https://picsum.photos/seed/pasada3/600/400",
+            "imgSm": "https://picsum.photos/seed/pasada3/320/220"
+        }
+    ],
+    "talleres": [
+        {
+            "id": 1,
+            "titulo": "Voz y dicción",
+            "dia": "Martes 18:30",
+            "cupos": 15
+        },
+        {
+            "id": 2,
+            "titulo": "Expresión corporal",
+            "dia": "Jueves 18:30",
+            "cupos": 12
+        },
+        {
+            "id": 3,
+            "titulo": "Improvisación",
+            "dia": "Sábado 10:00",
+            "cupos": 20
+        }
+    ]
+}
