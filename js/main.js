@@ -109,14 +109,14 @@ function cuentaRegresiva() {
 }
 
 function mapaCampus() {
-    const pos = [-16.5207, -68.1226];
+    const pos = [-16.522801, -68.1118247];
     const m = L.map('mapaCampus').setView(pos, 16);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap'
     }).addTo(m);
 
-    L.marker(pos).addTo(m).bindPopup('Auditorio UCB, La Paz').openPopup();
+    L.marker(pos).addTo(m).bindPopup('Universidad Católica Boliviana San Pablo, sede Obrajes').openPopup();
 }
 
 function animar() {
