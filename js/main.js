@@ -1,3 +1,5 @@
+import datosTeatro from '../data/obras.json';
+
 dayjs.locale('es');
 
 const fmt = f => dayjs(f).format('dddd D [de] MMMM, HH:mm');
@@ -24,7 +26,7 @@ function pintarObras() {
             <div class="tarjeta-cuerpo">
                 <h3>${o.titulo}</h3>
                 <p class="autor">${o.autor}</p>
-                <p class="fecha">${fmt(o.fecha)}</p>
+                <p class="fecha">${o.funciones.map(f => fmt(f.fecha)).join(' · ')}</p>
                 <p>${o.sinopsis}</p>
                 <button class="btn btn-borde" data-video="${o.id}">Ver avance</button>
             </div>
@@ -97,7 +99,7 @@ function pintarTalleres() {
 function cuentaRegresiva() {
     const el = document.getElementById('cuenta');
     const prox = datos.obras
-        .map(o => dayjs(o.fecha))
+        .flatMap(o => o.funciones.map(f => dayjs(f.fecha)))
         .filter(d => d.isAfter(dayjs()))
         .sort((a, b) => a - b)[0];
 
@@ -139,19 +141,12 @@ document.getElementById('dlgVideo').addEventListener('close', () => {
     vid.removeAttribute('src');
 });
 
-fetch('data/obras.json')
-    .then(r => r.json())
-    .then(d => {
-        datos = d;
-        window.TEATRO = d;
-        pintarObras();
-        pintarGaleria();
-        pintarTalleres();
-        cuentaRegresiva();
-        mapaCampus();
-        animar();
-        document.dispatchEvent(new Event('datos-listos'));
-    })
-    .catch(() => {
-        document.getElementById('listaObras').textContent = 'No se pudo cargar la cartelera. Abre el sitio con Live Server.';
-    });
+datos = datosTeatro;
+window.TEATRO = datos;
+pintarObras();
+pintarGaleria();
+pintarTalleres();
+cuentaRegresiva();
+mapaCampus();
+animar();
+document.dispatchEvent(new Event('datos-listos'));

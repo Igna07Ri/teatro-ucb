@@ -4,7 +4,10 @@
             "id": 1,
             "titulo": "La casa de Bernarda Alba",
             "autor": "Federico García Lorca",
-            "fecha": "2026-11-14T19:30",
+            "funciones": [
+                { "id": "obra-1-funcion-1", "fecha": "2026-11-14T19:30" },
+                { "id": "obra-1-funcion-2", "fecha": "2026-11-15T18:00" }
+            ],
             "sinopsis": "Cinco hermanas encerradas por ocho años de luto bajo el mando de su madre.",
             "video": "assets/video/aviso1.mp4",
             "img": "https://picsum.photos/seed/teatro1/600/400"
@@ -13,7 +16,10 @@
             "id": 2,
             "titulo": "Esperando a Godot",
             "autor": "Samuel Beckett",
-            "fecha": "2026-11-21T19:30",
+            "funciones": [
+                { "id": "obra-2-funcion-1", "fecha": "2026-11-21T19:30" },
+                { "id": "obra-2-funcion-2", "fecha": "2026-11-22T18:00" }
+            ],
             "sinopsis": "Dos hombres esperan a alguien que nunca llega y llenan el tiempo como pueden.",
             "video": "assets/video/aviso2.mp4",
             "img": "https://picsum.photos/seed/teatro2/600/400"
@@ -22,7 +28,10 @@
             "id": 3,
             "titulo": "Un tranvía llamado deseo",
             "autor": "Tennessee Williams",
-            "fecha": "2026-12-05T20:00",
+            "funciones": [
+                { "id": "obra-3-funcion-1", "fecha": "2026-12-05T20:00" },
+                { "id": "obra-3-funcion-2", "fecha": "2026-12-06T18:00" }
+            ],
             "sinopsis": "Blanche llega a casa de su hermana y su pasado empieza a alcanzarla.",
             "video": "assets/video/aviso3.mp4",
             "img": "https://picsum.photos/seed/teatro3/600/400"
@@ -31,7 +40,10 @@
             "id": 4,
             "titulo": "El avaro",
             "autor": "Molière",
-            "fecha": "2026-12-12T19:00",
+            "funciones": [
+                { "id": "obra-4-funcion-1", "fecha": "2026-12-12T19:00" },
+                { "id": "obra-4-funcion-2", "fecha": "2026-12-13T18:00" }
+            ],
             "sinopsis": "Harpagón cuida su dinero más que a su familia, y el enredo no tarda en estallar.",
             "video": "assets/video/aviso4.mp4",
             "img": "https://picsum.photos/seed/teatro4/600/400"

@@ -52,23 +52,17 @@
                 <h2>Reserva tu butaca</h2>
                 <div class="reserva">
                     <div class="reserva-panel">
-                        <label for="funcion">Función</label>
-                        <select id="funcion"></select>
+                        <div id="selectorFuncion"></div>
                         <ul class="leyenda">
                             <li><span class="asiento-demo libre"></span>Disponible</li>
                             <li><span class="asiento-demo ocupado"></span>Ocupada</li>
                             <li><span class="asiento-demo elegido"></span>Seleccionada</li>
                         </ul>
-                        <div class="resumen" aria-live="polite">
-                            <p>Butacas: <strong id="lista">ninguna</strong></p>
-                            <p>Total: <strong id="total">Bs 0</strong></p>
-                        </div>
-                        <button class="btn" id="confirmar" disabled>Confirmar reserva</button>
-                        <p class="mensaje" id="mensaje" role="status"></p>
+                        <app-reservation-summary></app-reservation-summary>
                     </div>
                     <div class="sala">
                         <div class="escenario">Escenario</div>
-                        <div class="mapa" id="mapa" role="group" aria-label="Mapa de butacas"></div>
+                        <div class="mapa" id="mapa"></div>
                     </div>
                 </div>
             </section>
@@ -136,8 +130,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/locale/es.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/butacas.js"></script>
-        <script src="js/talleres.js"></script>
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/talleres.js"></script>
+        <script type="module" src="/src/main.js"></script>
     </body>
 </html>
