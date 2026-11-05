@@ -130,16 +130,76 @@ document.addEventListener('click', e => {
     if (!v) return;
 
     const o = datos.obras.find(x => x.id == v.dataset.video);
+    if (!o) return;
+
     document.getElementById('tituloVideo').textContent = o.titulo;
-    document.getElementById('video').src = o.video;
-    document.getElementById('dlgVideo').showModal();
+    const contenido = document.getElementById('videoContenido');
+    const errorVideo = document.getElementById('errorVideo');
+    const dlgVideo = document.getElementById('dlgVideo');
+    contenido.replaceChildren();
+    errorVideo.hidden = true;
+    errorVideo.textContent = '';
+
+    try {
+        const url = new URL(o.video);
+        if (!['http:', 'https:'].includes(url.protocol)) {
+            throw new Error('El enlace del video debe usar HTTP o HTTPS.');
+        }
+
+        const youtubeId = getYouTubeVideoId(url);
+        if (youtubeId === null) {
+            throw new Error('El enlace de YouTube no contiene un ID de video válido.');
+        }
+
+        if (youtubeId) {
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1`;
+            iframe.title = `Video: ${o.titulo}`;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.allowFullscreen = true;
+            contenido.append(iframe);
+        } else {
+            const video = document.createElement('video');
+            video.controls = true;
+            video.preload = 'none';
+            video.src = url.href;
+            video.addEventListener('error', () => {
+                errorVideo.textContent = 'No se pudo reproducir el video. Usa un enlace de YouTube o la URL directa de un archivo de video.';
+                errorVideo.hidden = false;
+            }, { once: true });
+            contenido.append(video);
+        }
+    } catch (error) {
+        errorVideo.textContent = error instanceof Error
+            ? error.message
+            : 'El enlace del video no es válido.';
+        errorVideo.hidden = false;
+    }
+
+    dlgVideo.showModal();
 });
 
 document.getElementById('dlgVideo').addEventListener('close', () => {
-    const vid = document.getElementById('video');
-    vid.pause();
-    vid.removeAttribute('src');
+    document.getElementById('videoContenido').replaceChildren();
 });
+
+function getYouTubeVideoId(url) {
+    const host = url.hostname.toLowerCase().replace(/^www\./, '');
+    if (host === 'youtu.be') {
+        const id = url.pathname.slice(1).split('/')[0];
+        return /^[\w-]{11}$/.test(id) ? id : null;
+    }
+
+    if (!['youtube.com', 'm.youtube.com', 'youtube-nocookie.com'].includes(host)) {
+        return undefined;
+    }
+
+    const path = url.pathname.split('/').filter(Boolean);
+    const id = url.pathname === '/watch'
+        ? url.searchParams.get('v')
+        : ['embed', 'shorts', 'live'].includes(path[0]) ? path[1] : null;
+    return id && /^[\w-]{11}$/.test(id) ? id : null;
+}
 
 datos = datosTeatro;
 window.TEATRO = datos;

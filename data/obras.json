@@ -9,8 +9,8 @@
                 { "id": "obra-1-funcion-2", "fecha": "2026-11-15T18:00" }
             ],
             "sinopsis": "Cinco hermanas encerradas por ocho años de luto bajo el mando de su madre.",
-            "video": "assets/video/aviso1.mp4",
-            "img": "https://picsum.photos/seed/teatro1/600/400"
+            "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "img": "./assets/keke1.png"
         },
         {
             "id": 2,
@@ -21,8 +21,8 @@
                 { "id": "obra-2-funcion-2", "fecha": "2026-11-22T18:00" }
             ],
             "sinopsis": "Dos hombres esperan a alguien que nunca llega y llenan el tiempo como pueden.",
-            "video": "assets/video/aviso2.mp4",
-            "img": "https://picsum.photos/seed/teatro2/600/400"
+            "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "img": "./assets/keke2.png"
         },
         {
             "id": 3,
@@ -34,7 +34,7 @@
             ],
             "sinopsis": "Blanche llega a casa de su hermana y su pasado empieza a alcanzarla.",
             "video": "assets/video/aviso3.mp4",
-            "img": "https://picsum.photos/seed/teatro3/600/400"
+            "img": "./assets/keke3.png"
         },
         {
             "id": 4,
@@ -46,7 +46,7 @@
             ],
             "sinopsis": "Harpagón cuida su dinero más que a su familia, y el enredo no tarda en estallar.",
             "video": "assets/video/aviso4.mp4",
-            "img": "https://picsum.photos/seed/teatro4/600/400"
+            "img": "./assets/keke4.png"
         }
     ],
     "pasadas": [
@@ -55,24 +55,24 @@
             "anio": 2025,
             "asistencia": 420,
             "resena": "Una versión ágil, con un elenco joven que se lo creyó de principio a fin.",
-            "img": "https://picsum.photos/seed/pasada1/600/400",
-            "imgSm": "https://picsum.photos/seed/pasada1/320/220"
+            "img": "./assets/keke1.png",
+            "imgSm": "./assets/keke1.png"
         },
         {
             "titulo": "Fuenteovejuna",
             "anio": 2025,
             "asistencia": 380,
             "resena": "El coro final puso de pie a la sala.",
-            "img": "https://picsum.photos/seed/pasada2/600/400",
-            "imgSm": "https://picsum.photos/seed/pasada2/320/220"
+            "img": "./assets/keke2.png",
+            "imgSm": "./assets/keke2.png"
         },
         {
             "titulo": "Sueño de una noche de verano",
             "anio": 2024,
             "asistencia": 510,
             "resena": "Humor, luces y mucho ritmo. La función de cierre agotó entradas.",
-            "img": "https://picsum.photos/seed/pasada3/600/400",
-            "imgSm": "https://picsum.photos/seed/pasada3/320/220"
+            "img": "./assets/keke3.png",
+            "imgSm": "./assets/keke3.png"
         }
     ],
     "talleres": [

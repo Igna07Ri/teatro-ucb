@@ -256,9 +256,16 @@ input:invalid:not(:placeholder-shown) {
     margin-bottom: 1rem;
 }
 
-.modal video {
+.modal video,
+.modal iframe {
+    display: block;
     width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: var(--radio);
+}
+
+.modal iframe {
+    border: 0;
 }
 
 .cerrar {
