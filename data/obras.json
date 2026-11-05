@@ -21,7 +21,7 @@
                 { "id": "obra-2-funcion-2", "fecha": "2026-11-22T18:00" }
             ],
             "sinopsis": "Dos hombres esperan a alguien que nunca llega y llenan el tiempo como pueden.",
-            "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "video": "https://www.youtube.com/watch?v=GRsMsUfnxZM",
             "img": "./assets/keke2.png"
         },
         {
@@ -33,7 +33,7 @@
                 { "id": "obra-3-funcion-2", "fecha": "2026-12-06T18:00" }
             ],
             "sinopsis": "Blanche llega a casa de su hermana y su pasado empieza a alcanzarla.",
-            "video": "assets/video/aviso3.mp4",
+            "video": "https://www.youtube.com/watch?v=_9Ut8USvd6k",
             "img": "./assets/keke3.png"
         },
         {
@@ -45,7 +45,7 @@
                 { "id": "obra-4-funcion-2", "fecha": "2026-12-13T18:00" }
             ],
             "sinopsis": "Harpagón cuida su dinero más que a su familia, y el enredo no tarda en estallar.",
-            "video": "assets/video/aviso4.mp4",
+            "video": "https://www.youtube.com/watch?v=384NlaOUnNw",
             "img": "./assets/keke4.png"
         }
     ],
