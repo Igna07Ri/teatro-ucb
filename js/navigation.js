@@ -103,17 +103,22 @@ class TeatroNavigation extends HTMLElement {
         `;
 
         this.subscription?.unsubscribe();
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-            this.actualizarSesion(session?.user ?? null, base);
-        });
-        this.subscription = subscription;
-        supabase.auth.getSession()
-            .then(({ data: { session } }) => this.actualizarSesion(session?.user ?? null, base))
-            .catch(error => {
-                console.error('No se pudo consultar la sesión de navegación.', error);
-                const container = this.querySelector('#sesionNav');
-                container.textContent = 'No se pudo cargar la sesión.';
+        if (supabase) {
+            const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+                this.actualizarSesion(session?.user ?? null, base);
             });
+            this.subscription = subscription;
+            supabase.auth.getSession()
+                .then(({ data: { session } }) => this.actualizarSesion(session?.user ?? null, base))
+                .catch(error => {
+                    console.error('No se pudo consultar la sesión de navegación.', error);
+                    const container = this.querySelector('#sesionNav');
+                    container.textContent = 'No se pudo cargar la sesión.';
+                });
+        } else {
+            console.error('Supabase no está configurado. La autenticación y las reservas no estarán disponibles.');
+            this.actualizarSesion(null, base);
+        }
 
         const button = this.querySelector('.menu-btn');
         const menu = this.querySelector('#menu');

@@ -5,7 +5,9 @@ const msg = document.querySelector('#auth-msg');
 const modo = form.dataset.modo; // "login" | "registro"
 
 // Si ya hay sesión, ir directo a reservar
-usuarioActual().then(u => { if (u) location.href = './index.html#reservar'; });
+usuarioActual()
+  .then(u => { if (u) location.href = './index.html#reservar'; })
+  .catch(err => { msg.textContent = traducir(err.message); });
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
