@@ -1,0 +1,51 @@
+:root {
+  --font: var(--font-main);
+  --negro: #000;
+  --blanco: #fff;
+  --panel-bg: rgba(0, 0, 0, 0.5);
+  --radio-panel: 15px;
+  --radio-boton: 10px;
+  --error: #ff8a8a;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--blanco);
+  background-color: var(--negro);
+}
+
+.panel {
+  width: min(596px, calc(100% - 32px)); margin: 42px auto; padding: 43px 65px 48px;
+  background: var(--panel-bg); border-radius: var(--radio-panel);
+  backdrop-filter: blur(6px);
+}
+.panel h1 {
+  margin: 0 0 32px; text-align: center; font-size: clamp(48px, 8vw, 64px); font-weight: 600;
+  text-shadow: -5px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Campos: solo línea inferior blanca, como en el diseño */
+.campo { margin-bottom: 22px; }
+.campo label { display: block; font-size: 24px; font-weight: 600; }
+.campo input {
+  width: 100%; padding: 10px 0; font: inherit; font-size: 20px; color: var(--blanco);
+  background: transparent; border: 0; border-bottom: 2px solid var(--blanco); outline: none;
+}
+.campo input:focus-visible { border-bottom-width: 3px; }
+
+.btn {
+  width: 100%; padding: 14px; font: inherit; font-size: 20px; font-weight: 500;
+  color: var(--blanco); background: transparent;
+  border: 2px solid var(--blanco); border-radius: var(--radio-boton); cursor: pointer;
+}
+.btn:hover { background: rgba(255, 255, 255, 0.14); }
+.btn:disabled { opacity: 0.6; cursor: wait; }
+
+.alt { margin: 16px 0 0; font-size: 18px; }
+.alt a { color: var(--blanco); font-weight: 700; text-decoration: underline; }
+#auth-msg { min-height: 24px; margin: 8px 0 0; color: var(--error); font-size: 18px; }
+
+@media (max-width: 800px) {
+  .panel { margin: 24px auto; padding: 32px 24px; }
+}

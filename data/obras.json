@@ -4,37 +4,49 @@
             "id": 1,
             "titulo": "La casa de Bernarda Alba",
             "autor": "Federico García Lorca",
-            "fecha": "2026-11-14T19:30",
+            "funciones": [
+                { "id": "obra-1-funcion-1", "fecha": "2026-11-14T19:30" },
+                { "id": "obra-1-funcion-2", "fecha": "2026-11-15T18:00" }
+            ],
             "sinopsis": "Cinco hermanas encerradas por ocho años de luto bajo el mando de su madre.",
-            "video": "assets/video/aviso1.mp4",
-            "img": "https://picsum.photos/seed/teatro1/600/400"
+            "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "img": "./assets/keke1.png"
         },
         {
             "id": 2,
             "titulo": "Esperando a Godot",
             "autor": "Samuel Beckett",
-            "fecha": "2026-11-21T19:30",
+            "funciones": [
+                { "id": "obra-2-funcion-1", "fecha": "2026-11-21T19:30" },
+                { "id": "obra-2-funcion-2", "fecha": "2026-11-22T18:00" }
+            ],
             "sinopsis": "Dos hombres esperan a alguien que nunca llega y llenan el tiempo como pueden.",
-            "video": "assets/video/aviso2.mp4",
-            "img": "https://picsum.photos/seed/teatro2/600/400"
+            "video": "https://www.youtube.com/watch?v=GRsMsUfnxZM",
+            "img": "./assets/keke2.png"
         },
         {
             "id": 3,
             "titulo": "Un tranvía llamado deseo",
             "autor": "Tennessee Williams",
-            "fecha": "2026-12-05T20:00",
+            "funciones": [
+                { "id": "obra-3-funcion-1", "fecha": "2026-12-05T20:00" },
+                { "id": "obra-3-funcion-2", "fecha": "2026-12-06T18:00" }
+            ],
             "sinopsis": "Blanche llega a casa de su hermana y su pasado empieza a alcanzarla.",
-            "video": "assets/video/aviso3.mp4",
-            "img": "https://picsum.photos/seed/teatro3/600/400"
+            "video": "https://www.youtube.com/watch?v=_9Ut8USvd6k",
+            "img": "./assets/keke3.png"
         },
         {
             "id": 4,
             "titulo": "El avaro",
             "autor": "Molière",
-            "fecha": "2026-12-12T19:00",
+            "funciones": [
+                { "id": "obra-4-funcion-1", "fecha": "2026-12-12T19:00" },
+                { "id": "obra-4-funcion-2", "fecha": "2026-12-13T18:00" }
+            ],
             "sinopsis": "Harpagón cuida su dinero más que a su familia, y el enredo no tarda en estallar.",
-            "video": "assets/video/aviso4.mp4",
-            "img": "https://picsum.photos/seed/teatro4/600/400"
+            "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "img": "./assets/keke4.png"
         }
     ],
     "pasadas": [
@@ -43,44 +55,66 @@
             "anio": 2025,
             "asistencia": 420,
             "resena": "Una versión ágil, con un elenco joven que se lo creyó de principio a fin.",
-            "img": "https://picsum.photos/seed/pasada1/600/400",
-            "imgSm": "https://picsum.photos/seed/pasada1/320/220"
+            "img": "./assets/keke1.png",
+            "imgSm": "./assets/keke1.png"
         },
         {
             "titulo": "Fuenteovejuna",
             "anio": 2025,
             "asistencia": 380,
             "resena": "El coro final puso de pie a la sala.",
-            "img": "https://picsum.photos/seed/pasada2/600/400",
-            "imgSm": "https://picsum.photos/seed/pasada2/320/220"
+            "img": "./assets/keke2.png",
+            "imgSm": "./assets/keke2.png"
         },
         {
             "titulo": "Sueño de una noche de verano",
             "anio": 2024,
             "asistencia": 510,
             "resena": "Humor, luces y mucho ritmo. La función de cierre agotó entradas.",
-            "img": "https://picsum.photos/seed/pasada3/600/400",
-            "imgSm": "https://picsum.photos/seed/pasada3/320/220"
+            "img": "./assets/keke3.png",
+            "imgSm": "./assets/keke3.png"
         }
     ],
     "talleres": [
         {
             "id": 1,
-            "titulo": "Voz y dicción",
+            "titulo": "Voz y Dicción",
             "dia": "Martes 18:30",
-            "cupos": 15
+            "cupos": 15,
+            "descripcion": "Entrena respiración, articulación y proyección para dar vida a cada palabra.",
+            "img": "./assets/keke2.png"
         },
         {
             "id": 2,
             "titulo": "Expresión corporal",
             "dia": "Jueves 18:30",
-            "cupos": 12
+            "cupos": 12,
+            "descripcion": "Explora el movimiento, el espacio y la presencia escénica como herramientas de expresión.",
+            "img": "./assets/keke3.png"
         },
         {
             "id": 3,
             "titulo": "Improvisación",
             "dia": "Sábado 10:00",
-            "cupos": 20
+            "cupos": 20,
+            "descripcion": "Desarrolla escucha, imaginación y creación colectiva a través del juego teatral.",
+            "img": "./assets/keke4.png"
+        },
+        {
+            "id": 4,
+            "titulo": "Canto",
+            "dia": "Martes 18:30",
+            "cupos": 10,
+            "descripcion": "Explora la voz, la respiración y la interpretación musical para comunicar desde el escenario.",
+            "img": "./assets/keke2.png"
+        },
+        {
+            "id": 5,
+            "titulo": "Method Acting",
+            "dia": "Lunes 15:30",
+            "cupos": 11,
+            "descripcion": "Trabaja objetivos, circunstancias y escucha para construir interpretaciones escénicas auténticas.",
+            "img": "./assets/keke1.png"
         }
     ]
 }

@@ -6,76 +6,65 @@
         <title>Teatro UCB | Temporada 2026</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <a class="saltar" href="#principal">Saltar al contenido</a>
 
-        <header class="cabecera">
-            <a class="marca" href="#inicio">Teatro UCB</a>
-            <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
-            <nav id="menu" aria-label="Principal">
-                <ul>
-                    <li><a href="#cartelera">Cartelera</a></li>
-                    <li><a href="#reserva">Reservar</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#talleres">Talleres</a></li>
-                    <li><a href="#ubicacion">Ubicación</a></li>
-                </ul>
-            </nav>
-        </header>
+        <teatro-navigation></teatro-navigation>
 
         <main id="principal">
             <section id="inicio" class="hero">
-                <div class="telon" aria-hidden="true"></div>
-                <div class="hero-texto">
-                    <p class="hero-fecha">Temporada 2026</p>
-                    <h1>Sube el telón en la UCB</h1>
-                    <p>Cuatro obras, una sala y tu butaca esperando. Elige función y reserva en un minuto.</p>
-                    <div class="acciones">
-                        <a class="btn" href="#reserva">Reservar entradas</a>
-                        <a class="btn btn-borde" href="#cartelera">Ver cartelera</a>
+                <div class="hero-contenido">
+                    <div class="hero-titular">
+                        <p class="hero-etiqueta">Taller De</p>
+                        <h1>Teatro</h1>
+                        <p class="cuenta" id="cuenta" aria-live="polite"></p>
                     </div>
-                    <p class="cuenta" id="cuenta" aria-live="polite"></p>
+                    <div class="hero-acciones">
+                        <a class="btn" href="#reserva">Reservar Entradas</a>
+                        <a class="btn" href="#cartelera">Ver Cartelera</a>
+                    </div>
                 </div>
             </section>
 
             <section id="cartelera" class="seccion">
                 <h2>Cartelera</h2>
-                <div class="rejilla" id="listaObras"></div>
+                <div class="cartelera-layout">
+                    <article class="obra-destacada" id="obraDestacada" aria-live="polite"></article>
+                    <div class="cartelera-afiches" id="listaObras"></div>
+                </div>
             </section>
 
-            <section id="reserva" class="seccion seccion-alt">
-                <h2>Reserva tu butaca</h2>
+            <section id="reserva" class="seccion seccion-alt reserva-seccion">
+                <div class="reserva-intro">
+                    <p class="reserva-etiqueta">Tu experiencia empieza aquí</p>
+                    <h2>Reserva Tu Butaca</h2>
+                    <p>Elige una función y selecciona tus asientos para ver el total antes de confirmar.</p>
+                </div>
                 <div class="reserva">
                     <div class="reserva-panel">
-                        <label for="funcion">Función</label>
-                        <select id="funcion"></select>
+                        <div id="selectorFuncion"></div>
                         <ul class="leyenda">
                             <li><span class="asiento-demo libre"></span>Disponible</li>
                             <li><span class="asiento-demo ocupado"></span>Ocupada</li>
                             <li><span class="asiento-demo elegido"></span>Seleccionada</li>
                         </ul>
-                        <div class="resumen" aria-live="polite">
-                            <p>Butacas: <strong id="lista">ninguna</strong></p>
-                            <p>Total: <strong id="total">Bs 0</strong></p>
-                        </div>
-                        <button class="btn" id="confirmar" disabled>Confirmar reserva</button>
-                        <p class="mensaje" id="mensaje" role="status"></p>
+                        <app-reservation-summary></app-reservation-summary>
                     </div>
                     <div class="sala">
+                        <p class="sala-instruccion">Selecciona tus butacas en el mapa</p>
                         <div class="escenario">Escenario</div>
-                        <div class="mapa" id="mapa" role="group" aria-label="Mapa de butacas"></div>
+                        <div class="mapa" id="mapa"></div>
                     </div>
                 </div>
             </section>
 
-            <section id="galeria" class="seccion">
+            <section id="galeria" class="seccion seccion-galeria">
                 <h2>Obras pasadas</h2>
-                <div class="rejilla" id="listaGaleria"></div>
+                <div class="rejilla galeria-grid" id="listaGaleria"></div>
                 <div class="grafico">
                     <canvas id="grafico" aria-label="Asistencia por obra"></canvas>
                 </div>
@@ -83,17 +72,40 @@
 
             <section id="talleres" class="seccion seccion-alt">
                 <h2>Talleres y convocatorias</h2>
-                <div class="rejilla" id="listaTalleres"></div>
+                <div class="rejilla talleres-grid" id="listaTalleres"></div>
             </section>
 
-            <section id="ubicacion" class="seccion">
-                <h2>Cómo llegar</h2>
-                <div id="mapaCampus" class="mapa-campus"></div>
+            <section id="ubicacion" class="seccion ubicacion-seccion">
+                <div class="ubicacion-encabezado">
+                    <div>
+                        <p class="ubicacion-etiqueta">Visítanos</p>
+                        <h2>Cómo llegar</h2>
+                        <p class="ubicacion-descripcion">Universidad Católica Boliviana San Pablo, sede Obrajes, La Paz.</p>
+                    </div>
+                </div>
+                <div class="ubicacion-panel">
+                    <a class="btn ubicacion-maps"
+                       href="https://www.google.com/maps/dir/?api=1&amp;destination=-16.522801%2C-68.1118247"
+                       target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/icono-google-maps.png" alt="" width="54" height="54" loading="lazy">
+                        <span>Av. 14 de Septiembre N°4807, esquina Calle 2, zona de Obrajes.</span>
+                    </a>
+                    <div class="ubicacion-mapa">
+                        <div class="mapa-campus-contenido">
+                            <div id="mapaCampus" class="mapa-campus" role="application"
+                                 aria-label="Mapa interactivo de la sede Obrajes"></div>
+                            <img id="mapaCampusFallback" class="mapa-campus-fallback"
+                                 src="/assets/mapa-campus-fallback.jpg"
+                                 alt="Mapa de la zona de Obrajes con la ubicación del Auditorio UCB, La Paz"
+                                 loading="lazy" hidden>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
         <footer class="pie">
-            <p>© 2026 Compañía de Teatro de la Universidad Católica Boliviana "San Pablo", La Paz.</p>
+            <p>© 2026 Taller de Teatro de la Universidad Católica Boliviana "San Pablo", La Paz.</p>
         </footer>
 
         <dialog id="dlgVideo" class="modal">
@@ -101,7 +113,8 @@
                 <button class="cerrar" aria-label="Cerrar">✕</button>
             </form>
             <h3 id="tituloVideo"></h3>
-            <video id="video" controls preload="none"></video>
+            <div id="videoContenido"></div>
+            <p class="error" id="errorVideo" role="alert" hidden></p>
         </dialog>
 
         <dialog id="dlgTaller" class="modal">
@@ -135,9 +148,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/locale/es.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/butacas.js"></script>
-        <script src="js/talleres.js"></script>
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/talleres.js"></script>
+        <script type="module" src="/src/main.js"></script>
     </body>
 </html>

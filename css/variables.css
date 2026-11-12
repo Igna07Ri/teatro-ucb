@@ -1,12 +1,12 @@
 :root {
-    --color-bg: #121212;
-    --color-superficie: #1c1a1b;
+    --color-bg: #000;
+    --color-superficie: rgba(0, 0, 0, 0.5);
     --color-telon: #800020;
-    --color-oro: #D4AF37;
-    --color-texto: #f1ece4;
-    --color-suave: #b9b0a3;
-    --font-titulo: 'Cormorant Garamond', serif;
-    --font-main: 'Inter', Arial, sans-serif;
-    --radio: 6px;
-    --ancho: 1100px;
+    --color-oro: #fff;
+    --color-texto: #fff;
+    --color-suave: rgba(255, 255, 255, 0.72);
+    --font-titulo: 'Afacad', Arial, sans-serif;
+    --font-main: 'Afacad', Arial, sans-serif;
+    --radio: 10px;
+    --ancho: 1200px;
 }

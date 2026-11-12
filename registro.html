@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro · Teatro UCB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+  <teatro-navigation></teatro-navigation>
+  <main class="panel">
+    <h1>Regístrate</h1>
+    <form id="auth-form" data-modo="registro" novalidate>
+      <div class="campo"><label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
+      <div class="campo"><label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="campo"><label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" minlength="6" required></div>
+      <div class="campo"><label for="password2">Confirmar password</label>
+        <input id="password2" name="password2" type="password" autocomplete="new-password" required></div>
+      <button class="btn" type="submit">Crear cuenta</button>
+      <p id="auth-msg" role="alert"></p>
+    </form>
+    <p class="alt">¿Ya tienes cuenta? <a href="./login.html">Inicia sesión</a></p>
+  </main>
+  <script type="module" src="./js/navigation.js"></script>
+  <script type="module" src="./js/auth.js"></script>
+</body>
+</html>
