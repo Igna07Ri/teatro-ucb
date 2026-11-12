@@ -21,7 +21,7 @@ class ReservationSummaryComponent {
     }
 
     confirm() {
-        confirmReservation();
+        return confirmReservation();
     }
 }
 
@@ -33,10 +33,10 @@ Component({
             <p>Butacas: <strong>{{ state.selectedSeats.length ? state.selectedSeats.join(', ') : 'ninguna' }}</strong></p>
             <p>Total: <strong>Bs {{ state.total }}</strong></p>
         </div>
-        <button class="btn" type="button" [disabled]="!state.selectedSeats.length" (click)="confirm()">
+        <button class="btn" type="button" [disabled]="!state.selectedSeats.length || state.loading || state.loadError || state.confirming" (click)="confirm()">
             Confirmar reserva
         </button>
-        <p class="mensaje" role="status">{{ state.message }}</p>
+        <p class="mensaje" [class.error]="state.messageType === 'error'" role="status">{{ state.message }}</p>
     `
 })(ReservationSummaryComponent);
 

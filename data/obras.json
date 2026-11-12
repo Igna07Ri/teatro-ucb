@@ -78,21 +78,43 @@
     "talleres": [
         {
             "id": 1,
-            "titulo": "Voz y dicción",
+            "titulo": "Voz y Dicción",
             "dia": "Martes 18:30",
-            "cupos": 15
+            "cupos": 15,
+            "descripcion": "Entrena respiración, articulación y proyección para dar vida a cada palabra.",
+            "img": "./assets/keke2.png"
         },
         {
             "id": 2,
             "titulo": "Expresión corporal",
             "dia": "Jueves 18:30",
-            "cupos": 12
+            "cupos": 12,
+            "descripcion": "Explora el movimiento, el espacio y la presencia escénica como herramientas de expresión.",
+            "img": "./assets/keke3.png"
         },
         {
             "id": 3,
             "titulo": "Improvisación",
             "dia": "Sábado 10:00",
-            "cupos": 20
+            "cupos": 20,
+            "descripcion": "Desarrolla escucha, imaginación y creación colectiva a través del juego teatral.",
+            "img": "./assets/keke4.png"
+        },
+        {
+            "id": 4,
+            "titulo": "Canto",
+            "dia": "Martes 18:30",
+            "cupos": 10,
+            "descripcion": "Explora la voz, la respiración y la interpretación musical para comunicar desde el escenario.",
+            "img": "./assets/keke2.png"
+        },
+        {
+            "id": 5,
+            "titulo": "Method Acting",
+            "dia": "Lunes 15:30",
+            "cupos": 11,
+            "descripcion": "Trabaja objetivos, circunstancias y escucha para construir interpretaciones escénicas auténticas.",
+            "img": "./assets/keke1.png"
         }
     ]
 }

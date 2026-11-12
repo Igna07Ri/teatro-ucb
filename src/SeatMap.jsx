@@ -20,9 +20,10 @@ function SeatMap() {
     }, []);
 
     return (
-        <div role="group" aria-label="Mapa de butacas">
+        <div role="group" aria-label="Mapa de butacas" aria-busy={state.loading}>
+            {state.loading && <p role="status">Cargando butacas ocupadas...</p>}
             {rows.map(row => (
-                <div className="fila" key={row.label}>
+                <div className="fila" key={row.label} role="group" aria-label={`Fila ${row.label}`}>
                     <span>{row.label}</span>
                     {row.seats.map(code => {
                         const isOccupied = occupied.has(code);
@@ -33,10 +34,10 @@ function SeatMap() {
                                 type="button"
                                 aria-label={`Butaca ${code}${isOccupied ? ', ocupada' : ''}`}
                                 aria-pressed={selected.has(code)}
-                                disabled={!state.currentFunction || isOccupied}
+                                disabled={!state.currentFunction || state.loading || state.loadError || state.confirming || isOccupied}
                                 onClick={() => toggleSeat(code)}
                             >
-                                {isOccupied ? '✕' : ''}
+                                {isOccupied ? '×' : code.slice(1)}
                             </button>
                         );
                     })}
