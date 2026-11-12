@@ -12,7 +12,4 @@ guardan por separado en `localStorage`.
 
 ## Publicación en GitHub Pages
 
-El workflow de GitHub Actions publica automáticamente `dist` cuando se actualiza
-la rama `main`. En el repositorio, abre **Settings → Pages** y selecciona
-**GitHub Actions** como fuente de publicación. La URL del fork será
-`https://<usuario>.github.io/teatro-ucb/`.
+Hola yon, soy el ratatin gaming
